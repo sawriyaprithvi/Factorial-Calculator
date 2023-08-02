@@ -1,19 +1,19 @@
 #include <stdio.h>
-
-int main() {
-    int n, factorial = 1;
-
-    printf("Enter the number for which you want to calculate the factorial: ");
-    scanf("%d", &n);
-
-    if (n < 0) {
-        printf("Factorial is undefined for negative numbers.\n");
-    } else {
-        for (int i = 1; i <= n; i++) {
-            factorial *= i;
-        }
-        printf("The factorial of %d is %d\n", n, factorial);
-    }
-
+int factorial(int x);
+int main(){
+    int x;
+    printf("Enter the number: ");
+    scanf("%d", &x);
+    printf("The value of factorial %d is %d\n", x, factorial(x));
+    
     return 0;
+}
+
+int factorial(int x){
+    if (x==1 || x==0){
+        return 1;
+    }
+    else{
+        return x * factorial(x-1);
+    }
 }
